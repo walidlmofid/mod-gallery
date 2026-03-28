@@ -1,5 +1,5 @@
 // app/page.tsx
-import ModCard from "@/components/ModCard";
+import ModCard from "../components/ModCard";
 
 const mods = [
   {
