@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* This tells Next to be less strict during the build */
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  /* This disables the strict checks that usually crash the build */
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
+  // This helps with CSS issues in v16
+  images: { unoptimized: true }
 };
 
 export default nextConfig;
