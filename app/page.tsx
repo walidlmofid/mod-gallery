@@ -3,99 +3,9 @@
 // app/page.tsx
 import { useState } from "react";
 import ModCard from "../components/ModCard";
+import { mods } from "../lib/mods";
 
 const CATEGORIES = ["All", "Trucks", "Maps", "Software"];
-
-const mods = [
-  {
-    slug: "volvo-fh16-ultimate",
-    title: "Volvo FH16 Ultimate",
-    category: "Trucks",
-    thumbnail:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.8,
-    downloads: "12.4k",
-    version: "2.1.0",
-  },
-  {
-    slug: "nordic-expansion-map",
-    title: "Nordic Expansion Map",
-    category: "Maps",
-    thumbnail:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.5,
-    downloads: "8.7k",
-    version: "1.3.2",
-  },
-  {
-    slug: "fleet-manager-pro",
-    title: "Fleet Manager Pro",
-    category: "Software",
-    thumbnail:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.2,
-    downloads: "5.1k",
-    version: "3.0.1",
-  },
-  {
-    slug: "scania-rs-pack",
-    title: "Scania RS Pack",
-    category: "Trucks",
-    thumbnail:
-      "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.9,
-    downloads: "21.0k",
-    version: "1.8.0",
-  },
-  {
-    slug: "desert-roads-map",
-    title: "Desert Roads Map",
-    category: "Maps",
-    thumbnail:
-      "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.3,
-    downloads: "6.2k",
-    version: "1.1.0",
-  },
-  {
-    slug: "physics-tuner-x",
-    title: "Physics Tuner X",
-    category: "Software",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.6,
-    downloads: "9.3k",
-    version: "4.2.1",
-  },
-  {
-    slug: "man-tgx-evo",
-    title: "MAN TGX EVO",
-    category: "Trucks",
-    thumbnail:
-      "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.7,
-    downloads: "14.8k",
-    version: "2.5.0",
-  },
-  {
-    slug: "alpine-routes-pack",
-    title: "Alpine Routes Pack",
-    category: "Maps",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-    downloadUrl: "#",
-    rating: 4.4,
-    downloads: "7.5k",
-    version: "1.0.3",
-  },
-];
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -115,9 +25,7 @@ export default function HomePage() {
           alt="Hero"
           className="h-64 w-full object-cover sm:h-80"
         />
-        {/* dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-transparent" />
-        {/* hero text */}
         <div className="absolute inset-0 flex flex-col justify-center px-8">
           <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-teal">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-orange-400" />
